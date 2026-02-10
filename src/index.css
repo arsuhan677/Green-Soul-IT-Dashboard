@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ashma Tech CRM Design System - Bengali-optimized */
+
+@layer base {
+  :root {
+    /* Primary - Deep Teal for professionalism */
+    --primary: 174 84% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm slate for balance */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 20%;
+    
+    /* Background & Surface */
+    --background: 210 20% 98%;
+    --foreground: 220 13% 15%;
+    
+    /* Cards & Elevated surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 15%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 15%;
+    
+    /* Muted - Subtle backgrounds */
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent - Bright teal for highlights */
+    --accent: 174 72% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive - Red for errors/delete */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success - Green for positive actions */
+    --success: 142 72% 40%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Amber for caution */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Info - Blue for information */
+    --info: 210 92% 50%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 174 84% 32%;
+    
+    --radius: 0.625rem;
+    
+    /* Sidebar */
+    --sidebar-background: 220 16% 18%;
+    --sidebar-foreground: 220 14% 90%;
+    --sidebar-primary: 174 84% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 16% 24%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 220 16% 25%;
+    --sidebar-ring: 174 84% 50%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 84% 32%), hsl(174 72% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 45%), hsl(188 78% 50%));
+    --gradient-warm: linear-gradient(135deg, hsl(38 92% 50%), hsl(25 95% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(142 72% 40%), hsl(152 76% 45%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60%), hsl(10 80% 55%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    --shadow-glow: 0 0 20px -5px hsl(174 84% 32% / 0.3);
+  }
+
+  .dark {
+    --primary: 174 72% 50%;
+    --primary-foreground: 220 16% 10%;
+    
+    --secondary: 220 16% 22%;
+    --secondary-foreground: 220 14% 90%;
+    
+    --background: 220 16% 10%;
+    --foreground: 220 14% 95%;
+    
+    --card: 220 16% 14%;
+    --card-foreground: 220 14% 95%;
+    
+    --popover: 220 16% 14%;
+    --popover-foreground: 220 14% 95%;
+    
+    --muted: 220 16% 20%;
+    --muted-foreground: 220 10% 55%;
+    
+    --accent: 174 72% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 16% 22%;
+    --input: 220 16% 22%;
+    --ring: 174 72% 50%;
+    
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 220 14% 90%;
+    --sidebar-primary: 174 72% 55%;
+    --sidebar-primary-foreground: 220 18% 8%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 220 16% 18%;
+    --sidebar-ring: 174 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Bengali-optimized typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+}
+
+@layer components {
+  /* KPI Card Variants */
+  .kpi-card {
+    @apply relative overflow-hidden rounded-xl bg-card p-6 shadow-md transition-all duration-300;
+  }
+  
+  .kpi-card:hover {
+    @apply shadow-lg -translate-y-0.5;
+  }
+  
+  .kpi-card-primary {
+    @apply kpi-card;
+    background: var(--gradient-primary);
+    @apply text-white;
+  }
+  
+  .kpi-card-accent {
+    @apply kpi-card;
+    background: var(--gradient-accent);
+    @apply text-white;
+  }
+  
+  .kpi-card-success {
+    @apply kpi-card;
+    background: var(--gradient-success);
+    @apply text-white;
+  }
+  
+  .kpi-card-warning {
+    @apply kpi-card;
+    background: var(--gradient-warm);
+    @apply text-white;
+  }
+  
+  /* Status badges */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+  
+  .status-new {
+    @apply status-badge bg-info/15 text-info;
+  }
+  
+  .status-contacted {
+    @apply status-badge bg-primary/15 text-primary;
+  }
+  
+  .status-interested {
+    @apply status-badge bg-warning/15 text-warning;
+  }
+  
+  .status-proposal {
+    @apply status-badge bg-accent/15 text-accent;
+  }
+  
+  .status-closed {
+    @apply status-badge bg-success/15 text-success;
+  }
+  
+  .status-lost {
+    @apply status-badge bg-destructive/15 text-destructive;
+  }
+  
+  /* Table styles */
+  .data-table {
+    @apply w-full border-collapse;
+  }
+  
+  .data-table th {
+    @apply bg-muted/50 px-4 py-3 text-left text-sm font-semibold text-muted-foreground;
+  }
+  
+  .data-table td {
+    @apply border-t border-border px-4 py-3 text-sm;
+  }
+  
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+  
+  /* Sidebar animation */
+  .sidebar-item {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sidebar-foreground transition-all duration-200;
+  }
+  
+  .sidebar-item:hover {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground font-medium;
+  }
+  
+  /* Form input styles */
+  .form-input {
+    @apply flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 text-base transition-colors;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
+    @apply placeholder:text-muted-foreground;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium;
+    @apply bg-primary text-primary-foreground transition-all duration-200;
+    @apply hover:bg-primary/90 hover:shadow-md active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium;
+    @apply bg-secondary text-secondary-foreground transition-all duration-200;
+    @apply hover:bg-secondary/80 active:scale-[0.98];
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium;
+    @apply text-foreground transition-all duration-200;
+    @apply hover:bg-muted active:scale-[0.98];
+  }
+  
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium;
+    @apply bg-destructive text-destructive-foreground transition-all duration-200;
+    @apply hover:bg-destructive/90 hover:shadow-md active:scale-[0.98];
+  }
+  
+  .btn-success {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium;
+    @apply bg-success text-success-foreground transition-all duration-200;
+    @apply hover:bg-success/90 hover:shadow-md active:scale-[0.98];
+  }
+  
+  /* Page header */
+  .page-header {
+    @apply mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+  }
+  
+  .page-title {
+    @apply text-2xl font-bold text-foreground;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+}
